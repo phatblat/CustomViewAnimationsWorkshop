@@ -23,19 +23,19 @@
 import UIKit
 
 fileprivate extension CGFloat {
-  // Spring animation
-  static let springDampingRatio: CGFloat = 0.7
-  static let springInitialVelocityY: CGFloat =  10
+    // Spring animation
+    static let springDampingRatio: CGFloat = 0.7
+    static let springInitialVelocityY: CGFloat =  10
 }
 
 fileprivate extension Double {
-  // Spring animation
-  static let animationDuration: Double = 0.8
+    // Spring animation
+    static let animationDuration: Double = 0.8
 }
 
 class SwipeUpPresentationController: UIPresentationController {
-  private var maxFrame: CGRect {
-    return UIWindow.maxFrame
-  }
+    private var maxFrame: CGRect {
+        return UIWindow.maxFrame
+    }
 }
 
