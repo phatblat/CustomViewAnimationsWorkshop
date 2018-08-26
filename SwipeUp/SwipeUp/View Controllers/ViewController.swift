@@ -24,10 +24,17 @@ import UIKit
 
 class ViewController: UIViewController {
   
-  private let swipeUpTransitioningDelegate = SwipeUpTransitioningDelegate()
+    private let swipeUpTransitioningDelegate = SwipeUpTransitioningDelegate()
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-  }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        guard let swipeUpVC = UIStoryboard(name: "Main", bundle: .none).instantiateViewController(withIdentifier: "SwipeUpDetailVC") as? SwipeUpDetailViewController else { return }
+
+        swipeUpVC.transitioningDelegate = swipeUpTransitioningDelegate
+        swipeUpVC.modalPresentationStyle = .custom
+
+        present(swipeUpVC, animated: true)
+    }
 }
 
